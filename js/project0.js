@@ -30,7 +30,7 @@ winnerO([['X', 'X', 'O'], ['O', 'X', 'O'], ['', '', '']]);
 // ('X' === 'O' === ''); this returns false 
 // // X == O is false, but X/O == '' or ' ' is true
 // console.log(false === '');
-// 
+// testing
 
 // let winnerX = function () {}
 
