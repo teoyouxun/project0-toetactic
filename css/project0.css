@@ -1,0 +1,18 @@
+body {
+    border: 1em solid #ffffff;
+    font-size: 100px;
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+p {
+    border-style: solid;
+    
+}
