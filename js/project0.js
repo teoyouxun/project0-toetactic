@@ -3,11 +3,12 @@ let ticTacToe = [['', '', ''], ['', '', ''], ['', '', '']]
 
 
 let winnerO = function (arr) {
-    const ('' != '') // this doesn't work, but just thinking how to exclude thjis
-    let rowWin = false     
-        if ((arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2]) || 
-    (arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2]) ||
-    (arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2])) {  
+    
+    let rowWin = false
+        
+        if ((arr[0][0] === 'O' && arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2]) || 
+    (arr[1][0] === 'O' && arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2]) ||
+    (arr[2][0] === 'O' && arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2])) {  
         rowWin = true
     }
         console.log(rowWin);
@@ -15,17 +16,17 @@ let winnerO = function (arr) {
     // ((arr[2][0]) === (arr[2][1]) === (arr[2][2])))
 
     let columnWin = false
-    if ((arr[0][0] === arr[1][0] && arr[1][0] === arr[2][0]) ||
-    (arr[0][1] === arr[1][1] && arr[1][1] === arr[2][1]) ||
-    (arr[0][2] === arr[1][2] && arr[1][2] === arr[2][2])) {
+    if ((arr[0][0] === 'O' && arr[0][0] === arr[1][0] && arr[1][0] === arr[2][0]) ||
+    (arr[0][1] === 'O' && arr[0][1] === arr[1][1] && arr[1][1] === arr[2][1]) ||
+    (arr[0][2] === 'O' && arr[0][2] === arr[1][2] && arr[1][2] === arr[2][2])) {
         columnWin = true
     }
 
     let diagonalWin = false
-    if ((arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2]) ||
-    (arr[2][0] === arr[1][1] && arr[1][1] === arr[0][2]))
+    if ((arr[0][0] === 'O' && arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2]) ||
+    (arr[2][0] === 'O' && arr[2][0] === arr[1][1] && arr[1][1] === arr[0][2])){
         diagonalWin = true
-
+    }
     
 
     if (rowWin == true || columnWin == true || diagonalWin == true) {
@@ -41,7 +42,7 @@ let winnerO = function (arr) {
 
 // For any given turn, check if function works, and what will the function return
 
-winnerO([['X', 'X', 'O'], ['O', 'X', 'O'], ['', '', '']]);
+winnerO([['X', 'X', 'O'], ['O', 'X', 'O'], ['O', 'O', 'O']]);
 // console.log('X' == 'O' == ''); //this is true, JS is so fucking stupid
 // ('X' === 'O' === ''); this returns false 
 // // X == O is false, but X/O == '' or ' ' is true
