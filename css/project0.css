@@ -3,23 +3,26 @@
     position: relative;
     grid-template-rows: 100px 100px 100px;
     grid-template-columns: 100px 100px 100px;
+    grid-row: auto;
     border: 1px solid #131111;
     border-style: solid;
     font-size: 10px;
     width: 100px;
     height: 100px;
     font-size: 100px;
-    justify-content: center;
+    text-align: center;
+   
     
 
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 300px;
+    margin: auto;
+    max-width: 600px;
 }
 
 p {
     border-style: solid;
     
 }
+
