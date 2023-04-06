@@ -146,7 +146,7 @@ winnerX([['X', 'X', 'O'], ['O', 'X', 'O'], ['O', 'O', 'X']])
 // console.log(gridsOnClick);
 
 
-
+let squareClick = document.querySelectorAll('.squares');
 
 
 //event listeners
