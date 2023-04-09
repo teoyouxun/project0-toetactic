@@ -13,6 +13,6 @@ Click on the tiles to begin the game! Player X will always go first.
 Click the reset button to reset the game!
 
 
-03 Apr 23 - COMING SOON! STAY TUNED FOR FURTHER UPDATES THIS WEEK 
-8 Apr 23 - Beta product with CSS nearly complete
+03 Apr 23 - COMING SOON! STAY TUNED FOR FURTHER UPDATES THIS WEEK  
+8 Apr 23 - Beta product with CSS nearly complete\
 9 Apr 23 - Tidied up codes, added some // comments
