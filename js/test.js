@@ -1,17 +1,13 @@
-const listOfSquares = document.querySelectorAll('.squares');
-console.log(listOfSquares);
+const listOfSquares = document.querySelectorAll('.grids-squares');
+const outputMsg = document.querySelector('.result');
+let button = document.querySelector(".button");
+
 
 let ticTacToe = [['', '', ''], ['', '', ''], ['', '', '']]
 let playerPiece = 'X'
+let gameState = true; 
 
-//listOfSquares has to respond to clicks by the user 
-//each square needs an event listener on click
-//on click, replace '' on empty square with X or O
-//run through win condition check
-//if true, stop the function and return winner (to be displayed on board)
-//else, turn ends and next player's turn starts (to be made into a function)
-//loop into line 7 and repeat 
-
+//Runs through the ticTacToe 2D array to check for all winning combinations 
 let checkWinner = function (arr, currPlayer) {
     
     let rowWin = false;
@@ -35,32 +31,30 @@ let checkWinner = function (arr, currPlayer) {
         diagonalWin = true;
     }
     
-
     if (rowWin == true || columnWin == true || diagonalWin == true) {
         return true;
     } else { 
         return false;
     }
-    
 }
 
-
 const onSquareClick = function (event) {
-    this.innerHTML = playerPiece; 
-    //console.log(this.id);
+    if ((this.innerHTML != ' ') || gameState === false) {
+        return;
+    }
+    this.innerHTML = playerPiece;
     let j = parseInt(this.id) % 3; //(i * 3) + j(Remainder) = this.id 
     let i = (parseInt(this.id) - j) / 3;
     ticTacToe[i][j] = playerPiece;
-    console.log(ticTacToe);
     if (checkWinner(ticTacToe, playerPiece)) { 
-        resetGame();
-        alert(`Player ${playerPiece} wins!`);
-        
+        outputMsg.innerHTML = `Player ${playerPiece} wins!`;
+        gameState = false;
+     
     } else {
        
         if (checkDraw()) {
-            alert(`It's a draw!`);
-            resetGame();
+            outputMsg.innerHTML = `It's a draw!`;
+            gameState = false;
         }
         if (playerPiece == 'X') {
             playerPiece = 'O' 
@@ -72,10 +66,11 @@ const onSquareClick = function (event) {
 
 let resetGame = function () {
     for (let i = 0; i < listOfSquares.length; i++) {
-        listOfSquares[i].innerHTML = ''; 
+        listOfSquares[i].innerHTML = ' '; 
     }
-    playerPiece = 'X';
     ticTacToe = [['', '', ''], ['', '', ''], ['', '', '']];
+    outputMsg.innerHTML = " ";
+    gameState = true;
 }
 
 let checkDraw = function () {
@@ -89,12 +84,11 @@ let checkDraw = function () {
     return true;
 }
 
+//assigning click event listeners to all 9 grids
 for (let i = 0; i < listOfSquares.length; i++) {
-    //add onClick to each square
-    //console.log to check if onclick works
-    //check if specific element (item inside the array) is retrieved
-    console.log(listOfSquares[i]);
     listOfSquares[i].addEventListener('click', onSquareClick)
     
 }
+
+button.addEventListener('click', resetGame);
 
